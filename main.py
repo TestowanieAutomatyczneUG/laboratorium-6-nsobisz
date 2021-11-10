@@ -26,7 +26,7 @@ class HammingTest(unittest.TestCase):
         with self.assertRaisesWithMessage(ValueError):
             hamming().distance("AATG", "AAA")
 
-    @unittest.skip("ignore")
+ 
     def test_disallow_second_strand_longer(self):
         with self.assertRaisesWithMessage(ValueError):
             hamming().distance("ATA", "AGTG")
@@ -57,6 +57,8 @@ class HammingTest(unittest.TestCase):
 class hamming:
     def distance(self, str1, str2):
         if len(str1)>len(str2):
+            raise ValueError("Str nie są równej długości")
+        elif len(str1)<len(str2):
             raise ValueError("Str nie są równej długości")
         elif str1==str2:
             return 0
