@@ -13,13 +13,13 @@ class HammingTest(unittest.TestCase):
     def test_single_letter_different_strands(self):
         self.assertEqual(hamming().distance("G", "T"), 1)
 
-    @unittest.skip("ignore")
-    def test_long_identical_strands(self):
-        self.assertEqual(hamming.distance("GGACTGAAATCTG", "GGACTGAAATCTG"), 0)
 
-    @unittest.skip("ignore")
+    def test_long_identical_strands(self):
+        self.assertEqual(hamming().distance("GGACTGAAATCTG", "GGACTGAAATCTG"), 0)
+
+
     def test_long_different_strands(self):
-        self.assertEqual(hamming.distance("GGACGGATTCTG", "AGGACGGATTCT"), 9)
+        self.assertEqual(hamming().distance("GGACGGATTCTG", "AGGACGGATTCT"), 9)
 
     @unittest.skip("ignore")
     def test_disallow_first_strand_longer(self):
@@ -64,5 +64,13 @@ class hamming:
                 return 0
             else:
                 return 1
-
+        elif len(str1)>1 and len(str2)>1:
+            if str1==str2:
+                return 0
+            else:
+                suma=0
+                for i in range(len(str1)):
+                    if str1[i]!=str2[i]:
+                        suma+=1
+                return suma
 
