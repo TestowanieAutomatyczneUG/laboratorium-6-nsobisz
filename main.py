@@ -21,25 +21,25 @@ class HammingTest(unittest.TestCase):
     def test_long_different_strands(self):
         self.assertEqual(hamming().distance("GGACGGATTCTG", "AGGACGGATTCT"), 9)
 
-    @unittest.skip("ignore")
+
     def test_disallow_first_strand_longer(self):
         with self.assertRaisesWithMessage(ValueError):
-            hamming.distance("AATG", "AAA")
+            hamming().distance("AATG", "AAA")
 
     @unittest.skip("ignore")
     def test_disallow_second_strand_longer(self):
         with self.assertRaisesWithMessage(ValueError):
-            hamming.distance("ATA", "AGTG")
+            hamming().distance("ATA", "AGTG")
 
     @unittest.skip("ignore")
     def test_disallow_left_empty_strand(self):
         with self.assertRaisesWithMessage(ValueError):
-            hamming.distance("", "G")
+            hamming().distance("", "G")
 
     @unittest.skip("ignore")
     def test_disallow_right_empty_strand(self):
         with self.assertRaisesWithMessage(ValueError):
-            hamming.distance("G", "")
+            hamming().distance("G", "")
 
     # Utility functions
 
@@ -56,7 +56,9 @@ class HammingTest(unittest.TestCase):
 
 class hamming:
     def distance(self, str1, str2):
-        if str1==str2:
+        if len(str1)>len(str2):
+            raise ValueError("Str nie są równej długości")
+        elif str1==str2:
             return 0
         elif len(str1)==1 and len(str2)==1:
                 return 1
