@@ -5,13 +5,13 @@ class HammingTest(unittest.TestCase):
     def test_empty_strands(self):
         self.assertEqual(hamming().distance("", ""), 0)
 
-    @unittest.skip("ignore")
-    def test_single_letter_identical_strands(self):
-        self.assertEqual(hamming.distance("A", "A"), 0)
 
-    @unittest.skip("ignore")
+    def test_single_letter_identical_strands(self):
+        self.assertEqual(hamming().distance("A", "A"), 0)
+
+
     def test_single_letter_different_strands(self):
-        self.assertEqual(hamming.distance("G", "T"), 1)
+        self.assertEqual(hamming().distance("G", "T"), 1)
 
     @unittest.skip("ignore")
     def test_long_identical_strands(self):
@@ -58,3 +58,9 @@ class hamming:
     def distance(self, str1, str2):
         if str1=="" and str2=="":
             return 0
+
+        elif len(str1)==1 and len(str1)==1:
+            if str1==str2:
+                return 0
+            else:
+                return 1
