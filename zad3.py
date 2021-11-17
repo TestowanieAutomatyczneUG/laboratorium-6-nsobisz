@@ -13,7 +13,10 @@ On the tenth day of Christmas my true love gave to me: ten Lords-a-Leaping, nine
 On the eleventh day of Christmas my true love gave to me: eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.
 On the twelfth day of Christmas my true love gave to me: twelve Drummers Drumming, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree."""
 
-        if type(dane)==int:
+        if dane=="all":
+            return song
+
+        elif type(dane)==int:
             if dane>0 and dane<12:
                 song_list=song.split("\n")
                 return song_list[dane-1]
@@ -22,7 +25,8 @@ On the twelfth day of Christmas my true love gave to me: twelve Drummers Drummin
         elif type(dane)==tuple:
             song_list=song.split("\n")
             return "\n".join(song_list[dane[0]-1:dane[1]])
-        elif dane=="all":
-            return song
+
+        else:
+            raise Exception("zły typ danych")
 
 

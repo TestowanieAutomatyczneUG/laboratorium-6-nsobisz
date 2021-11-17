@@ -43,23 +43,26 @@ On the twelfth day of Christmas my true love gave to me: twelve Drummers Drummin
     def test_negative_number_exception(self):
         self.assertRaises(Exception, self.temp.play, -1)
 
-    @unittest.skip
+    def test_0_number_exception(self):
+        self.assertRaises(Exception, self.temp.play, 0)
+
+
     def test_wrong_str_exception(self):
         self.assertRaises(Exception, self.temp.play, "al")
 
-    @unittest.skip
+
     def test_wrong_None_exception(self):
         self.assertRaises(Exception, self.temp.play, None)
 
-    @unittest.skip
+
     def test_wrong_dic_exception(self):
         self.assertRaises(Exception, self.temp.play, {"a":2})
 
-    @unittest.skip
+
     def test_wrong_float_exception(self):
         self.assertRaises(Exception, self.temp.play, 1.1)
 
-    @unittest.skip
+
     def test_wrong_line_interval_list_exception(self):
         self.assertRaises(Exception, self.temp.play, [1,2])
 
