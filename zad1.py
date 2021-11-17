@@ -1,6 +1,8 @@
 class hamming:
     def distance(self, str1, str2):
-        if len(str1)=="" and len(str2)!="":
+        if len(str1)!="" and len(str2)=="":
+            raise ValueError("pierwszy str nie jest pusty, drugi jest")
+        elif len(str1)=="" and len(str2)!="":
             raise ValueError("pierwszy str jest pusty, drugi nie")
         elif len(str1)>len(str2):
             raise ValueError("pierwszy str jest dłuższy")
