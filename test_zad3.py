@@ -13,7 +13,7 @@ class FizzBuzzTest(unittest.TestCase):
     def test_one_verse_2(self):
         self.assertEqual(self.temp.play(2), "On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a Pear Tree.")
 
-    @unittest.skip
+
     def test_line_interval(self):
         self.assertEqual(self.temp.play((1,2)),
                          """On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.

@@ -16,3 +16,8 @@ On the twelfth day of Christmas my true love gave to me: twelve Drummers Drummin
         if type(dane)==int:
             song_list=song.split("\n")
             return song_list[dane-1]
+        elif type(dane)==tuple:
+            song_list=song.split("\n")
+            return "\n".join(song_list[dane[0]-1:dane[1]])
+
+
