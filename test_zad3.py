@@ -19,7 +19,7 @@ class FizzBuzzTest(unittest.TestCase):
                          """On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.
 On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a Pear Tree.""")
 
-    @unittest.skip
+
     def test_whole_song(self):
         self.assertEqual(self.temp.play("all"), """On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.
 On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a Pear Tree.
