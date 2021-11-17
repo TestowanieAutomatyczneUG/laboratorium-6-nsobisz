@@ -9,6 +9,6 @@ class hamming:
         elif len(str1)>1 and len(str2)>1:
                 suma=0
                 for i in range(len(str1)):
-                    if str1[i]!=str2[i]:
+                    if str1[i] != str2[i]:
                         suma+=1
                 return suma
