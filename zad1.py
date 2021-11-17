@@ -8,3 +8,10 @@ class hamming:
                 return 0
             else:
                 return 1
+
+        else:
+            suma=0
+            for i in range(len(str1)):
+                if str1[i]!=str2[i]:
+                    suma+=1
+            return suma
