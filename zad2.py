@@ -1,8 +1,8 @@
 
 def roman(liczba):
-    liczby_rzymskie = {"I" : 1 }
+    liczby_rzymskie = {"IV": 4, "I" : 1 }
     wynik=""
-    if liczba <= 3:
+    if liczba <= 4:
         while liczba != 0:
             for i in liczby_rzymskie:
                 if liczba >= liczby_rzymskie[i]:
