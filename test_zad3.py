@@ -78,7 +78,7 @@ On the twelfth day of Christmas my true love gave to me: twelve Drummers Drummin
     def test_wrong_line_interval_tuple_wrong_numbers_exception(self):
         self.assertRaises(Exception, self.temp.play, (14, 23))
 
-    @unittest.skip
+
     def test_wrong_line_interval_tuple_wrong_numbers_first_bigger_than_second(self):
         self.assertRaises(Exception, self.temp.play, (13, 3))
 

@@ -25,6 +25,8 @@ On the twelfth day of Christmas my true love gave to me: twelve Drummers Drummin
         elif type(dane)==tuple:
             if dane[0]<0 or dane[1]>12:
                 raise Exception("złe liczby w przedziale")
+            if dane[0]>dane[1]:
+                raise Exception("pierwsza liczba jest większa niż druga")
 
             song_list=song.split("\n")
             return "\n".join(song_list[dane[0]-1:dane[1]])
